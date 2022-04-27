@@ -36,22 +36,15 @@ public class Cadena {
 	//Metodo eliminado que era repetido
 	
 	
+	//Metodo refactorizado para hacerlo menos complejo
 	public boolean esCapicua() {
 		String content = null;
-		if (this.contenido instanceof Double) {
-			content = this.contenido instanceof Double? String.valueOf(this.contenido): null;
-		}
-		else if (this.contenido instanceof Integer) {
-			content = this.contenido instanceof Integer? String.valueOf(this.contenido): null;
-		}
-		else if (this.contenido instanceof Long) {
-			content = this.contenido instanceof Long? String.valueOf(this.contenido): null;
+		if (this.contenido instanceof Double || this.contenido instanceof Integer || this.contenido instanceof Long) {
+			content = String.valueOf(this.contenido);
 		}
 		
 		boolean capicua = content!=null && !content.isEmpty() && !content.trim().isEmpty();
-		
 		if(capicua) {
-
 			for(int i=0; i<Integer.valueOf(content.length()/2); i++) {
 				if(!Character.isDigit(content.charAt(i)) || content.charAt(i)!=content.charAt(content.length()-i-1)) {
 					capicua = false;
