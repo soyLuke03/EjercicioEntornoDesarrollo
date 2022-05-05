@@ -12,6 +12,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 class setTest {
 
+	//Metodo Size y Clear
 	@Test
 	void sizeSetTest() {
 		Set<Integer> set = new HashSet<Integer>();
@@ -26,6 +27,7 @@ class setTest {
 		assert(set.size()==0);
 	}
 	
+	// Metodo Contains
 	@ValueSource(ints = {1,5})
 	@ParameterizedTest
 	void testSetContains(int valor) {
@@ -43,6 +45,7 @@ class setTest {
 		assertTrue(set.contains(valor));
 	}
 	
+	//Metodo Remove
 	@ValueSource(ints = {10,5})
 	@ParameterizedTest
 	void testSetRemove(int valor) {
@@ -55,7 +58,7 @@ class setTest {
 		assertEquals(set.size(),0);
 	}
 	
-	
+	//Metodo cuando el Set es nulo
 	@Test
 	void testSetNull() {
 		Set<Integer> set = null;
